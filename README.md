@@ -49,7 +49,7 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 La siguiente imagen ilustra el espíritu creativo del proyecto:
 
-![Poema IA](frontend/public/poem_image.png)
+![Poema IA](./poem_image.png)
 
 ---
 
