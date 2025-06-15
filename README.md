@@ -1,7 +1,5 @@
 # Generador de Poemas con IA
 
-![Poema IA](./poem_image.png)
-
 Este proyecto consiste en una aplicación web que genera poemas cortos utilizando inteligencia artificial. Está compuesto por un frontend desarrollado en Next.js y un backend en FastAPI que utiliza el modelo GPT-4o de OpenAI para crear los poemas.
 
 ## Estructura del Proyecto
