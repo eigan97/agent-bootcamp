@@ -1,2 +1,10 @@
 .env
-backend/llm/.env
+HW-1/backend/llm/.env
+HW-1/backend/llm/venv/
+HW-1/backend/llm/__pycache__/
+HW-1/backend/llm/app/__pycache__/
+HW-1/backend/llm/app/api/__pycache__/
+
+HW-2-RAG/backend/.env
+HW-2-RAG/backend/venv/
+HW-2-RAG/backend/__pycache__/

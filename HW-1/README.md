@@ -1,25 +1,23 @@
-# AI Poem Generator
+# Generador de Poemas con IA
 
-![AI Poem](frontend/public/poem_image.png)
+Este proyecto consiste en una aplicación web que genera poemas cortos utilizando inteligencia artificial. Está compuesto por un frontend desarrollado en Next.js y un backend en FastAPI que utiliza el modelo GPT-4o de OpenAI para crear los poemas.
 
-This project is a web application that generates short poems using artificial intelligence. It consists of a frontend built with Next.js and a backend in FastAPI that uses OpenAI's GPT-4o model to create the poems.
-
-## Project Structure
+## Estructura del Proyecto
 
 ```
 HW-1/
-├── frontend/   # User interface (Next.js)
-├── backend/    # API and poem generation logic (FastAPI)
+├── frontend/   # Interfaz de usuario (Next.js)
+├── backend/    # API y lógica de generación de poemas (FastAPI)
 ```
 
 ---
 
 ## Frontend (Next.js)
 
-- Allows users to generate and view short poems with the click of a button.
-- Uses custom components to display poems in an attractive way.
-- Communicates with the backend to fetch new AI-generated poems.
-- To start the frontend:
+- Permite al usuario generar y visualizar poemas cortos con solo presionar un botón.
+- Utiliza componentes personalizados para mostrar los poemas de forma atractiva.
+- Se comunica con el backend para obtener nuevos poemas generados por IA.
+- Para iniciar el frontend:
 
 ```bash
 cd frontend
@@ -27,16 +25,16 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación.
 
 ---
 
 ## Backend (FastAPI)
 
-- Exposes a REST API that generates poems using OpenAI's GPT-4o model.
-- Main endpoint: `/agent` (GET) — Returns an AI-generated poem.
-- Endpoint `/agent/stream` — Returns the poem in streaming mode.
-- To start the backend:
+- Expone una API REST que genera poemas usando el modelo GPT-4o de OpenAI.
+- Endpoint principal: `/agent` (GET) — Devuelve un poema generado por IA.
+- Endpoint `/agent/stream` — Devuelve el poema en modo streaming.
+- Para iniciar el backend:
 
 ```bash
 cd backend/llm
@@ -45,20 +43,20 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 ---
 
-## Cover Image
+## Imagen de portada
 
-The following image illustrates the creative spirit of the project:
+La siguiente imagen ilustra el espíritu creativo del proyecto:
 
-![AI Poem](frontend/public/poem_image.png)
-
----
-
-## Requirements
-- Node.js and npm for the frontend
-- Python 3.10+ and FastAPI for the backend
-- An OpenAI API key (set in environment variables)
+![Poema IA](./poem_image.png)
 
 ---
 
-## Credits
-- Inspired by the creativity of AI and machine learning. 
+## Requisitos
+- Node.js y npm para el frontend
+- Python 3.10+ y FastAPI para el backend
+- Una clave de API de OpenAI (configurada en variables de entorno)
+
+---
+
+## Créditos
+- Inspirado en la creatividad de la IA y el aprendizaje automático. 
