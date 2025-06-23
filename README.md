@@ -93,6 +93,6 @@ An intelligent agent that can decide whether to use the weather tool or the docu
 -   **Request Body (RAG Example)**:
     ```json
     {
-      "question": "summarize the document about AI"
+      "question": "summarize the document about fondos"
     }
     ``` 
