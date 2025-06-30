@@ -1,98 +1,93 @@
-# HW-2 RAG and Agent API
+# Figma MCP Server – Documentation
 
-This project is a Python backend built with FastAPI that provides functionalities for Retrieval-Augmented Generation (RAG) and an AI agent powered by OpenAI's models.
-<img width="877" alt="Captura de pantalla 2025-06-23 a la(s) 12 24 07 p m" src="https://github.com/user-attachments/assets/2be4f504-bcf0-43a7-83bf-3e4301d13d2f" />
-<img width="867" alt="Captura de pantalla 2025-06-23 a la(s) 11 58 48 a m" src="https://github.com/user-attachments/assets/7568e8dc-b83a-430a-9b36-9609d793900e" />
+## Overview
 
 
-## Features
+https://github.com/user-attachments/assets/8dcbb931-62ae-490e-9944-6e98dbb618de
 
-- **Document Retrieval**: Retrieve relevant documents from a Vectorize.io vector store based on a user's query.
-- **RAG Chat**: Engage in a conversation with an AI that uses the retrieved documents as a knowledge base to answer questions.
-- **AI Agent**: Interact with an intelligent agent that can perform two main tasks:
-    1.  Answer questions using the RAG pipeline.
-    2.  Fetch the current weather for a specific location.
 
-## Project Structure
+**Figma MCP Server** is a full-stack application that allows users to interact with a code generation agent via a chat interface. Users can send prompts or Figma node links, and the backend (powered by FastAPI and an AI agent) will return generated code or answers, which are displayed in a user-friendly UI.
 
-The main logic is contained within `HW-2-RAG/backend/main.py`.
+- **Frontend:** Next.js + React, with a chat UI and a result code viewer.
+- **Backend:** FastAPI, with an agent that processes prompts and returns code or information.
 
--   `main.py`: Contains the FastAPI application, including all endpoint definitions and agent logic.
--   `pyproject.toml`: Lists the project dependencies.
+## How it works
 
-## Setup and Installation
+1. **User Interaction:**  
+   The user types a prompt or pastes a Figma node link in the chat and clicks "Send".
 
-1.  **Navigate to the backend directory**:
-    ```bash
-    cd HW-2-RAG/backend
-    ```
+2. **API Request:**  
+   The frontend sends a POST request to the backend endpoint `/agent` with the user's prompt.
 
-2.  **Install dependencies**:
-    It's recommended to use a virtual environment. The project uses `uv` for package management.
-    ```bash
-    uv pip install -r requirements.txt 
-    # or based on pyproject.toml
-    uv pip install fastapi pydantic uvicorn vectorize-client openai python-dotenv litellm
-    ```
+3. **Agent Processing:**  
+   The backend agent processes the prompt (using AI, RAG, and Figma tools) and returns a response, usually containing code or an explanation.
 
-3.  **Create a `.env` file**:
-    Create a `.env` file in the `HW-2-RAG/backend` directory and add the following environment variables:
-    ```
-    OPENAI_API_KEY="your_openai_api_key"
-    VECTORIZE_TOKEN="your_vectorize_token"
-    ORG_ID="your_vectorize_org_id"
-    PIPE_ID="your_vectorize_pipe_id"
-    ```
+4. **Display:**  
+   - The chat displays a confirmation message ("Code generated:").
+   - The result section shows the full response from the agent (including code blocks, explanations, etc.).
 
-## Running the Application
+## Example
 
-To run the FastAPI server, execute the following command in the `HW-2-RAG/backend` directory:
-
-```bash
-uvicorn main:app --reload
+**User prompt:**
+```
+https://www.figma.com/design/3YxhVqhNV82LU6qQkUH21p/Example-Design?node-id=123-456
+I want the code for this component.
 ```
 
-The application will be available at `http://127.0.0.1:8000`.
+**Backend response:**
+```
+Here is the code for the selected Figma node:
 
-## API Endpoints
+```javascript
+import { Button } from '@innovaccer/design-system';
+```
+You can use this component in your project as shown above.
+```
 
-The application exposes the following POST endpoints:
+**What you see in the app:**
+- The chat shows:  
+  `Code generated:`
+- The result section shows:  
+  ```
+  Here is the code for the selected Figma node:
 
-### 1. `/retrieve`
+  ```javascript
+  import { Button } from '@innovaccer/design-system';
+  ```
+  You can use this component in your project as shown above.
+  ```
 
-Retrieves documents relevant to the user's question.
+## Running the project
 
--   **Request Body**:
-    ```json
-    {
-      "question": "What is the capital of France?"
-    }
-    ```
+First, run the development server:
 
-### 2. `/rag`
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-Provides an answer to a question based on a set of retrieved documents.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
--   **Request Body**:
-    ```json
-    {
-      "question": "What is the main topic of the provided context?"
-    }
-    ```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### 3. `/agent`
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-An intelligent agent that can decide whether to use the weather tool or the document retrieval tool to answer a user's question.
+## Learn More
 
--   **Request Body (Weather Example)**:
-    ```json
-    {
-      "question": "what is the weather in tokyo?"
-    }
-    ```
--   **Request Body (RAG Example)**:
-    ```json
-    {
-      "question": "summarize the document about fondos"
-    }
-    ``` 
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
