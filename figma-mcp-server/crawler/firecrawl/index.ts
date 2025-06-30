@@ -2,7 +2,7 @@ import FirecrawlApp from '@mendable/firecrawl-js';
 import fs from 'fs';
 import path from 'path';
 
-const API_KEY = process.env.FIRECRAWL_API_KEY || 'fc-02280cb34cbb4b08bec5073df724221e';
+const API_KEY = process.env.FIRECRAWL_API_KEY || '';
 const START_URL = 'https://design.innovaccer.com/components/overview/all-components/';
 const MAX_DEPTH = 20;
 const MARKDOWN_DIR = path.join(__dirname, '../markdown');
