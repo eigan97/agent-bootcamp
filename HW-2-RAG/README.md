@@ -1,6 +1,9 @@
-# RAG and Agent API
+# HW-2 RAG and Agent API
 
 This project is a Python backend built with FastAPI that provides functionalities for Retrieval-Augmented Generation (RAG) and an AI agent powered by OpenAI's models.
+<img width="877" alt="Captura de pantalla 2025-06-23 a la(s) 12 24 07 p m" src="https://github.com/user-attachments/assets/2be4f504-bcf0-43a7-83bf-3e4301d13d2f" />
+<img width="867" alt="Captura de pantalla 2025-06-23 a la(s) 11 58 48 a m" src="https://github.com/user-attachments/assets/7568e8dc-b83a-430a-9b36-9609d793900e" />
+
 
 ## Features
 
@@ -90,6 +93,6 @@ An intelligent agent that can decide whether to use the weather tool or the docu
 -   **Request Body (RAG Example)**:
     ```json
     {
-      "question": "summarize the document about AI"
+      "question": "summarize the document about fondos"
     }
     ``` 
